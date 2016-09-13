@@ -1,6 +1,6 @@
 # NoshSpot - SuperUser
 
-## Group project to make a restaurant ordering app for diners and restauranteurs.
+## Admin page for running the infrastructure of customers and restaurants using the app
 
 ### Technology Used:
 - AngularJS
