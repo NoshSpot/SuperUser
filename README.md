@@ -1,4 +1,4 @@
-# NoshSpot
+# NoshSpot - SuperUser
 
 ## Group project to make a restaurant ordering app for diners and restauranteurs.
 
