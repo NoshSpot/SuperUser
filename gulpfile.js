@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
-    
+    wiredep = require('wiredep').stream,
     gutil = require('gulp-util'),
     connect = require('gulp-connect'),
     inject = require('gulp-inject'),
@@ -16,12 +16,12 @@ gulp.task('watch', function() {
     gulp.watch(htmlSources, ['html']);
 });
 
-var paths = ['./app/**/*.js', './app/**/*.css'];
+var paths = ['./app/css/**/*.css', './app/js/app.module.js', './app/js/**/*.js'];
 
 gulp.task('inject', function() {
     var sources = gulp.src(paths, { read: false });
     return gulp.src('./app/index.html')
-        
+        .pipe(wiredep())
         .pipe(inject(sources, { relative: true }))
         .pipe(gulp.dest('./app'));
 });
