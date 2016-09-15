@@ -17,7 +17,7 @@
     	.state('login', {
     		url: '/login',
     		controller: 'LoginController as login',
-    		templateUrl: 'login/login.html'
+    		templateUrl: 'js/login/login.html'
     	})
 /////// RESTAURANT STATES ////////////////////////////////////////////
     	.state('restaurants', {
