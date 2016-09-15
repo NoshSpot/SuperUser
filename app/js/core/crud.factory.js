@@ -66,10 +66,13 @@
         return deferred.promise;
       }
 
-      function update(entity) {
+      // this function requires that you pass in an id
+      // so that we don't have to do any trickery to get
+      // the entity id
+      function update(entity, id) {
         var deferred = $q.defer();
 
-        $http.put(endpoint + '/' + entity.Id, entity)
+        $http.put(endpoint + '/' + id, entity)
           .success(function(data) {
             deferred.resolve(data);
           })
