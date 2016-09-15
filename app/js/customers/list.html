@@ -12,13 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="customer in customerList.allCustomer">
+      <tr ng-repeat= "customer in customersList.allCustomers">
         <td>{{customer.firstName}} {{customer.lastName}}</td>
         <td>{{customer.address}}, {{customer.zipcode}}</td>
         <td>{{customer.telephone}}</td>
         <td>{{customer.email}}</td>
         <td class="is-icon">
-          <button ui-sref="customer.detail({customerId: customer.customerId})">
+          <button ui-sref="customers.detail({customerId: customer.customerId})">
            View 
           </button>
         </td>
