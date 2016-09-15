@@ -3,20 +3,52 @@
 	<!-- Customer's Detail -->
 	<div class="column is-half">
 		<div class="box">
-			<label>Name</label>
-			<p>{{customerDetail.customer.firstName}} {{customerDetail.customer.lastName</p>
-			<label>Address</label>
-			<p>{{customerDetail.customer.address}}</p>
-			<label>ZipCode</label>
-			<p>{{customerDetail.customer.zipCode}}</p>
-			<label>Telephone</label>
-			<p>{{customerDetail.customer.telephone}}</p>
-			<label>Email</label>
-			<p>{{customerDetail.customer.email}}</p>
-			<button class="button is-danger"
-					ng-click="customerDetail.deleteCustomer()">
-				Delete
-			</button>
+			<div class="control is-horizontal">
+				<div class="control-label">
+					<label>Name</label>
+				</div>
+				<p class="control is-expanded">
+					{{customerDetail.customer.firstName}} {{customerDetail.customer.lastName
+				</p>
+			</div>
+			<div class="control is-horizontal">
+				<div class="control-label">
+					<label>Address</label>
+				</div>
+				<p class="control is-expanded">
+					{{customerDetail.customer.address}}
+				</p>
+			</div>
+			<div class="control is-horizontal">
+				<div class="control-label">
+					<label>ZipCode</label>
+				</div>
+				<p class="control is-expanded">
+					{{customerDetail.customer.zipCode}}
+				</p>
+			</div>
+			<div class="control is-horizontal">
+				<div class="control-label">
+					<label>Telephone</label>
+				</div>
+				<p class="control is-expanded">
+					{{customerDetail.customer.telephone}}
+				</p>
+			</div>
+			<div class="control is-horizontal">
+				<div class="control-label">
+					<label>Email</label>
+				</div>
+				<p class="control is-expanded">
+					{{customerDetail.customer.email}}
+				</p>
+			</div>
+			<div class="control">
+				<button class="button is-danger"
+						ng-click="customerDetail.deleteCustomer()">
+					Delete
+				</button>
+			</div>
 		</div>
 	</div>
 
@@ -35,13 +67,17 @@
 			</div>
 			<!-- Reviews -->
 			<div ng-show="customerDetail.reviewMode">
-				<label>Rating:</label>
-				<p></p>
-				<label>Review:</label>
-				<p></p>
+				<ul>
+					<li ng-repeat="customer in customerDetail.customer">
+						<label>Rating:</label>
+						<p>{{customer.review.rating}}</p>
+						<label>Review:</label>
+						<p>{{customer.review.description}}</p>
+					</li>
+				</ul>
 			</div>
 
-			<!-- Orders -->
+			<!-- Orders History -->
 			<div ng-hide="customerDetail.reviewMode">
 				<label>Order History</label>
 				<ul>
