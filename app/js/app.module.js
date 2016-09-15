@@ -7,6 +7,7 @@
         .config(appConfig);
 
     appConfig.$inject = ['$urlRouterProvider', '$stateProvider'];
+    
 
     function appConfig($urlRouterProvider, $stateProvider) {
 
