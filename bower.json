@@ -15,6 +15,13 @@
     "test",
     "tests"
   ],
+  "overrides" : {
+      "bulma": {
+        "main": [
+            "css/bulma.css"
+        ]
+      }
+  },
   "dependencies": {
     "angular": "^1.5.8",
     "toastr": "^2.1.3",
