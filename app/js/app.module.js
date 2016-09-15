@@ -63,7 +63,7 @@
 		})
 			.state('customers.list', {
 				url: '/list',
-				controller: 'CustomersListController as customersList',
+				controller: 'CustomersListController as customerList',
 				templateUrl: 'customers/list.html'
 			})
 			.state('customers.detail', {
