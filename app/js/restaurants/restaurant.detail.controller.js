@@ -12,6 +12,7 @@
         var vm = this;
         vm.title = 'RestaurantDetailController';
         vm.save = save;
+        vm.restaurants = {};
         vm.getRestaurantById = getRestaurantById;
 
         getRestaurantById();
@@ -33,11 +34,11 @@
                 vm.restaurants = {};
             }
         }
-        function save() {
+        function save(restaurants, restaurantId) {
             // If the page loads, and the existing restaurant is already paired with an Id, then continue wthe request with that specified restaurant.
             if ($stateParams.restaurantId) {
                 // Call the current restaurant information, to be updated.
-                StudentFactory.update(vm.restaurants).then(
+                RestaurantFactory.update(vm.restaurants, vm.restaurants.restaurantId).then(
                     function() {
                         alert("Update was successful!")
                         $state.go('restaurant.list');

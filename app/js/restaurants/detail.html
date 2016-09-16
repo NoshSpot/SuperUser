@@ -1,4 +1,4 @@
-<div ng-show="restaurantDetail.restaurant.restaurantId">
+<div ng-show="restaurantDetail.restaurants.restaurantId">
     <div class="container">
         <div class="panel">
             <p class="panel-heading">Restaurant Details</p>
@@ -13,7 +13,7 @@
                     <div class="column">
                         <label class="label">Address:</label>
                         <p class="control">
-                            <input class="input" type="text" placeholder="Text input" fake="">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.address">
                         </p>
                     </div>
                 </div>
@@ -21,13 +21,13 @@
                     <div class="column is-half">
                         <label class="label">Zip Code:</label>
                         <p class="control">
-                            <input class="input" type="text" placeholder="Text input" fake="">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.zipCode">
                         </p>
                     </div>
                     <div class="column">
                         <label class="label">Telephone:</label>
                         <p class="control">
-                            <input class="input" type="text" placeholder="Text input" fake="">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.telephone">
                         </p>
                     </div>
                 </div>
@@ -35,13 +35,13 @@
                     <div class="column is-half">
                         <label class="label">Email Address:</label>
                         <p class="control">
-                            <input class="input" type="text" placeholder="Text input" fake="">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.email">
                         </p>
                     </div>
                     <div class="column">
                         <label class="label">Website Url:</label>
                         <p class="control">
-                            <input class="input" type="text" placeholder="Text input" fake="">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.webSite">
                         </p>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                     </div>
                 </article>
                 <div>
-                    <a ng-click="" class="button is-primary">
+                    <a ng-click="restaurantDetail.save(restaurants, restaurantId)" class="button is-primary">
                         <span class="icon">
 								        <i class="fa fa-check"></i>
 								      </span>
