@@ -5,7 +5,7 @@
   <title>NoshSpot | SuperUser</title>
 
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+  <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
   <link rel="stylesheet" href="bower_components/bulma/css/bulma.css" />
   <!-- endbower -->
   <!-- inject:css -->
@@ -33,14 +33,11 @@
     <div ui-view></div>
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="js/app.module.js"></script>
-    <script src="js/customers/customer.detail.controller.js"></script>
-    <script src="js/customers/customerList.Controller.js"></script>
     <script src="js/core/category.factory.js"></script>
     <script src="js/core/crud.factory.js"></script>
     <script src="js/core/customer.factory.js"></script>
@@ -51,6 +48,8 @@
     <script src="js/core/payment.factory.js"></script>
     <script src="js/core/restaurant.factory.js"></script>
     <script src="js/core/review.factory.js"></script>
+    <script src="js/customers/customer.detail.controller.js"></script>
+    <script src="js/customers/customerList.Controller.js"></script>
     <script src="js/login/login.controller.js"></script>
     <script src="js/restaurants/list.controller.js"></script>
     <script src="js/restaurants/restaurant.detail.controller.js"></script>
