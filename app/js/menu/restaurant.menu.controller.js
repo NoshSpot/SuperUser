@@ -14,6 +14,7 @@
         vm.menu = [];
 
         vm.addMenuItem = addMenuItem;
+        vm.deleteMenuItem = deleteMenuItem;
         ////////////////
         getMenu();
         ////////////////
@@ -34,7 +35,9 @@
         }
 
         function deleteMenuItem(menuItem) {
-            
+            MenuItemFactory.remove(menuItem.menuItemId).then(function(response) {
+                getMenu();
+            });
         }
     }
 })();
