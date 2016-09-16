@@ -32,11 +32,11 @@
                     function() {
                         var index = vm.reviews.indexOf(review);
                         vm.reviews.splice(index, 1);
-                        console.log("remove");
+                        console.log("removed the review");
                     }
                 );
             }
         }
-        
+
     }
 })();
