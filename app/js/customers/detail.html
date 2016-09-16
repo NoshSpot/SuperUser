@@ -8,7 +8,7 @@
 					<label>Name</label>
 				</div>
 				<p class="control is-expanded">
-					{{customerDetail.customer.firstName}} {{customerDetail.customer.lastName
+					{{customerDetail.customer.firstName}} {{customerDetail.customer.lastName}}
 				</p>
 			</div>
 			<div class="control is-horizontal">
@@ -43,12 +43,13 @@
 					{{customerDetail.customer.email}}
 				</p>
 			</div>
-			<div class="control">
+			<div class="control is-pulled-right">
 				<button class="button is-danger"
-						ng-click="customerDetail.deleteCustomer()">
+						ng-click="customerDetail.deleteCustomer(customerDetail.customer.customerId)">
 					Delete
 				</button>
 			</div>
+			<br><br>
 		</div>
 	</div>
 
@@ -68,11 +69,11 @@
 			<!-- Reviews -->
 			<div ng-show="customerDetail.reviewMode">
 				<ul>
-					<li ng-repeat="customer in customerDetail.customer">
+					<li ng-repeat="review in customerDetail.customer.review">
 						<label>Rating:</label>
-						<p>{{customer.review.rating}}</p>
+						<p>{{review.rating}}</p>
 						<label>Review:</label>
-						<p>{{customer.review.description}}</p>
+						<p>{{review.description}}</p>
 					</li>
 				</ul>
 			</div>
@@ -80,9 +81,22 @@
 			<!-- Orders History -->
 			<div ng-hide="customerDetail.reviewMode">
 				<label>Order History</label>
-				<ul>
-					<li></li>
-				</ul>
+				<table class="table is-striped">
+					<thead>
+						<tr>
+							<th>Time</th>
+							<th>Order</th>
+							<th>Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="order in customerDetail.customer.order">
+							<td>{{order.timeStamp}}</td>
+							<td>{{order.orderItem.menuItem.name}}</td>
+							<td>{{order.orderItem.menuItem.price}}</td>
+						</tr>
+					<tbody>
+				</table>
 			</div>
 		</div>
 	</div>
