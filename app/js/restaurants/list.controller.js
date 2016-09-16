@@ -30,7 +30,7 @@
 /*************************************************************************/
 		function removeRestaurant(restaurant){
 			if (confirm("Are you sure you want to remove this restaurant?")){
-				RestaurantFactory.remove(restaurant).then(
+				RestaurantFactory.remove(restaurant.restaurantId).then(
 					function(){
 						var index = vm.allRestaurants.indexOf(restaurant);
 						vm.allRestaurants.splice(index, 1);
