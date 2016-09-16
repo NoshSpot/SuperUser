@@ -1,2 +1,87 @@
-<h1>DETAIL</h1>
-<div ui-view></div>
+<div ng-show="restaurantDetail.restaurants.restaurantId">
+    <div class="container">
+        <div class="panel">
+            <p class="panel-heading">Restaurant Details</p>
+            <div class="panel-body">
+                <div class="columns">
+                    <div class="column is-half">
+                        <label class="label">Restaurant Name:</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.name">
+                        </p>
+                    </div>
+                    <div class="column">
+                        <label class="label">Address:</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.address">
+                        </p>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-half">
+                        <label class="label">Zip Code:</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.zipCode">
+                        </p>
+                    </div>
+                    <div class="column">
+                        <label class="label">Telephone:</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.telephone">
+                        </p>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-half">
+                        <label class="label">Email Address:</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.email">
+                        </p>
+                    </div>
+                    <div class="column">
+                        <label class="label">Website Url:</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.webSite">
+                        </p>
+                    </div>
+                </div>
+                <article class="message">
+                    <div class="message-header">
+                        <p>Description:</p>
+                    </div>
+                    <div class="message-body">
+                        DESCRIPTION WILL GO HERE.
+                    </div>
+                </article>
+                <div>
+                    <a ng-click="restaurantDetail.save(restaurants, restaurantId)" class="button is-primary">
+                        <span class="icon">
+								        <i class="fa fa-check"></i>
+								      </span>
+                        <span>Submit</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Use CSS to pad, rather than <br>  -->
+    <br>
+    <div class="container">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="tabs">
+                    <ul>
+                        <li class="is-active"><a>Menu:</a></li>
+                        <li><a>Orders:</a></li>
+                        <li><a>Reviews:</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div ui-view>
+                    THIS IS WHERE THE TAB INFORMATION WILL BE DISPLAYED.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
