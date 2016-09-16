@@ -10,17 +10,18 @@
     /* @ngInject */
     function RestaurantDetailMenuController(MenuGroupFactory, MenuItemFactory, $stateParams, RestaurantFactory) {
         var vm = this;
-        vm.menu = [];
-        getMenu();
 
+        vm.menu = [];
+
+        ////////////////
+        getMenu();
         ////////////////
 
         function getMenu() {
             RestaurantFactory.getById($stateParams.restaurantId).then(function(response) {
-                vm.menu = response.data.menuGroups;
+                console.log(response);
+                vm.menu = response.menuGroups;
             });
-
-
         }
     }
 })();
