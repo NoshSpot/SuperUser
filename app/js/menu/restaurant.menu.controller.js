@@ -13,6 +13,7 @@
 
         vm.menu = [];
 
+        vm.addMenuItem = addMenuItem;
         ////////////////
         getMenu();
         ////////////////
@@ -21,6 +22,15 @@
             RestaurantFactory.getById($stateParams.restaurantId).then(function(response) {
                 console.log(response);
                 vm.menu = response.menuGroups;
+            });
+        }
+
+        function addMenuItem(menuGroupId) {
+            vm.newMenuItem.menuGroupId = menuGroupId;
+
+            MenuItemFactory.add(vm.newMenuItem).then(function() {
+                getMenu();
+                vm.newMenuItem = {};
             });
         }
     }
