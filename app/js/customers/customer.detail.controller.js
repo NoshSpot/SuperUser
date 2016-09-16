@@ -13,7 +13,7 @@
         vm.title = 'CustomerDetailController';
 
         // variables
-        vm.customerId = $stateParams.customerId;
+        vm.customerId = 1; //$stateParams.customerId;
         vm.customer;
         vm.reviewMode = true;
 
