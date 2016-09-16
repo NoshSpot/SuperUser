@@ -1,9 +1,20 @@
 <h1>MENU</h1>
 <div ng-repeat="menuGroup in restaurantDetailMenu.menu">
     <h1>{{menuGroup.menuGroupTitle}}</h1>
-    <ul>
-        <li ng-repeat="item in menuGroup.menuItems">
-            {{item.name}}
-        </li>
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in menuGroup.menuItems">
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
