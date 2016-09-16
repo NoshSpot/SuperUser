@@ -71,9 +71,9 @@
             <div class="panel-heading">
                 <div class="tabs">
                     <ul>
-                        <li class="is-active"><a>Menu:</a></li>
-                        <li><a>Orders:</a></li>
-                        <li><a>Reviews:</a></li>
+                        <li class="is-active" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a>Menu:</a></li>
+                        <li ui-sref="restaurants.detail.tabs.orders({restaurantId: restaurantDetail.restaurantId})"><a>Orders:</a></li>
+                        <li ui-sref="restaurants.detail.tabs.reviews({restaurantId: restaurantDetail.restaurantId})"><a>Reviews:</a></li>
                     </ul>
                 </div>
             </div>
