@@ -33,5 +33,9 @@
                 vm.newMenuItem = {};
             });
         }
+
+        function deleteMenuItem(menuItem) {
+            
+        }
     }
 })();
