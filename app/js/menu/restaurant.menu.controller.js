@@ -20,7 +20,6 @@
 
         function getMenu() {
             RestaurantFactory.getById($stateParams.restaurantId).then(function(response) {
-                console.log(response);
                 vm.menu = response.menuGroups;
             });
         }
