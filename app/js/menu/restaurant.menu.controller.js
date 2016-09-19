@@ -25,12 +25,12 @@
             });
         }
 
-        function addMenuItem(menuGroupId) {
-            vm.newMenuItem.menuGroupId = menuGroupId;
+        function addMenuItem(newMenuItem, menuGroupId) {
+            newMenuItem.menuGroupId = menuGroupId;
 
-            MenuItemFactory.add(vm.newMenuItem).then(function() {
+            MenuItemFactory.add(newMenuItem).then(function() {
                 getMenu();
-                vm.newMenuItem = {};
+                newMenuItem = {};
             });
         }
 

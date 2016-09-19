@@ -19,11 +19,11 @@
                 </td>
             </tr>
             <tr>
-                <td><input type="text" ng-model="restaurantDetailMenu.newMenuItem.name"></td>
-                <td><input type="text" ng-model="restaurantDetailMenu.newMenuItem.description"></td>
-                <td><input type="text" ng-model="restaurantDetailMenu.newMenuItem.price"></td>
+                <td><input type="text" ng-model="menuGroup.newMenuItem.name"></td>
+                <td><input type="text" ng-model="menuGroup.newMenuItem.description"></td>
+                <td><input type="text" ng-model="menuGroup.newMenuItem.price"></td>
                 <td>
-                    <button ng-click="restaurantDetailMenu.addMenuItem(menuGroup.menuGroupId)">Add</button>
+                    <button ng-click="restaurantDetailMenu.addMenuItem(menuGroup.newMenuItem, menuGroup.menuGroupId)">Add</button>
                 </td>
             </tr>
         </tbody>
