@@ -5,19 +5,44 @@
         .module('app')
         .controller('RestaurantDetailController', RestaurantDetailController);
 
-    RestaurantDetailController.$inject = ['$stateParams', 'RestaurantFactory', '$state'];
+    RestaurantDetailController.$inject = ['$stateParams', 'CategoryFactory', 'RestaurantFactory', '$state', 'toastr'];
 
     /* @ngInject */
-    function RestaurantDetailController($stateParams, RestaurantFactory, $state) {
+    function RestaurantDetailController($stateParams, CategoryFactory, RestaurantFactory, $state, toastr) {
         var vm = this;
         vm.title = 'RestaurantDetailController';
-        vm.save = save;
-        vm.restaurants = {};
-        //vm.getRestaurantById = getRestaurantById;
 
-        getRestaurantById();
+        //functions
+        vm.save = save;
+        vm.getCategories = getCategories;
+        vm.getRestaurantById = getRestaurantById;
+        vm.addCategory = addCategory;
+
+        //variable
+        vm.restaurants = {};
+        vm.newCategory = {};
+        vm.categories;
+
+
+        activate()
 
         ////////////////
+
+        function activate() {
+            getRestaurantById();
+            getCategories();
+        }
+
+        function getCategories() {
+            CategoryFactory.getAll().then (
+                function(data) {
+                    vm.categories = data;
+                },
+                function(error) {
+                    toastr.error(error.status, error.statusText);
+                }
+            );
+        }
 
         function getRestaurantById() {
         	// If the page loads, and the existing restaurant is already paired with an Id, then continue the request with that specified restaurant.
@@ -36,13 +61,22 @@
                 vm.restaurants = {};
             }
         }
+
+        function addCategory() {
+            CategoryFactory.add(vm.newCategory).then(function(data) {
+                getCategories();
+                vm.restaurants.categoryId = data.categoryId;
+            });
+        }
+
         function save() {
             // If the page loads, and the existing restaurant is already paired with an Id, then continue wthe request with that specified restaurant.
             if ($stateParams.restaurantId) {
+                vm.restaurants.category = null;
                 // Call the current restaurant information, to be updated.
                 RestaurantFactory.update(vm.restaurants, vm.restaurants.restaurantId).then(
                     function() {
-                        alert("Update was successful!")
+                        toastr.success("Update was successful!");
                     }
                 );
           } else {
@@ -50,11 +84,11 @@
             RestaurantFactory.add(vm.restaurants).then(
                 function() {
                     // Save + create was successful.
-                    alert("Add was successful!")
-                    
+                    toastr.success("Add was successful!");
+                    $state.go('restaurants.list');
                 }
             );
-          } $state.go('restaurants.list');
+          } 
         }
     }
 })();
