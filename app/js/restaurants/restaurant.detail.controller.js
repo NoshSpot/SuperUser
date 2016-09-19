@@ -16,9 +16,11 @@
         vm.save = save;
         vm.getCategories = getCategories;
         vm.getRestaurantById = getRestaurantById;
+        vm.addCategory = addCategory;
 
         //variable
         vm.restaurants = {};
+        vm.newCategory = {};
         vm.categories;
 
 
@@ -59,9 +61,18 @@
                 vm.restaurants = {};
             }
         }
+
+        function addCategory() {
+            CategoryFactory.add(vm.newCategory).then(function(data) {
+                getCategories();
+                vm.restaurants.categoryId = data.categoryId;
+            });
+        }
+
         function save() {
             // If the page loads, and the existing restaurant is already paired with an Id, then continue wthe request with that specified restaurant.
             if ($stateParams.restaurantId) {
+                vm.restaurants.category = null;
                 // Call the current restaurant information, to be updated.
                 RestaurantFactory.update(vm.restaurants, vm.restaurants.restaurantId).then(
                     function() {

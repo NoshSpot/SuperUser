@@ -50,13 +50,22 @@
                         <label class="label">Category:</label>
                         <p class="control">
                             <span class="select">
-                            <select type="text" 
-                                    ng-model="restaurantDetail.restaurants.categoryId">
-                                <option value="new">Add new category</option>
-                                <option ng-repeat="category in restaurantDetail.categories"
-                                        ng-value="category.categoryId">{{category.categoryTitle}}</option>
-                            </select>
+                                <select type="text" 
+                                        ng-model="restaurantDetail.restaurants.categoryId"
+                                        ng-options="category.categoryId as category.categoryTitle for category in restaurantDetail.categories"
+                                        >
+                                        <option value="">Add New Category...</option>
+                                    <!-- <option value="new">Add new category</option>
+                                    <option ng-repeat="category in restaurantDetail.categories"
+                                            ng-value="{{category.categoryId}}"
+                                            >{{category.categoryTitle}}</option> -->
+                                </select>
                             </span>
+                            <div ng-show="restaurantDetail.restaurants.categoryId === null">
+                                <input class="input" type="text" ng-model="restaurantDetail.newCategory.categoryTitle" placeholder="Category name...">
+                                <button ng-click="restaurantDetail.addCategory()">Add Category</button>
+                            </div>
+                            
                         </p>
                     </div>
                 </div>
