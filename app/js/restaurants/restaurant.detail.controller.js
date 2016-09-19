@@ -22,6 +22,8 @@
         function getRestaurantById() {
         	// If the page loads, and the existing restaurant is already paired with an Id, then continue the request with that specified restaurant.
             if ($stateParams.restaurantId) {
+                vm.restaurantId = $stateParams.restaurantId;
+                
                 RestaurantFactory.getById($stateParams.restaurantId).then(
                     function(restaurants) {
                         // With an exisiting Id, the vm.restaurants value will be equal to an existing restaurant.
