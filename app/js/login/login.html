@@ -1,24 +1,26 @@
-<div class="columns">
-  <div class="container column is-one-third box loginBox">
-    <div class="content is-large">
-      <h1>Login</h1>
+<div id="loginBackground">
+  <div class="columns">
+    <div class="container column is-one-third box loginBox">
+      <div class="content is-large">
+        <h1>Login</h1>
+      </div>
+
+      <p class="control has-icon">
+        <input class="input is-large" type="email" placeholder="Email" ng-model="login.loginInfo.email">
+        <i class="fa fa-envelope"></i>
+      </p>
+      
+      <p class="control has-icon">
+        <input class="input is-large" type="password" placeholder="Password" ng-model="login.loginInfo.password">
+        <i class="fa fa-lock"></i>
+      </p>
+
+      <p class="control">
+        <button class="button is-large login-button" ng-click="login.loginAdmin();">
+          Login <i class="fa fa-check login-button-icon"></i>
+        </button>
+      </p>
+
     </div>
-
-    <p class="control has-icon">
-      <input class="input is-large" type="email" placeholder="Email" ng-model="login.loginInfo.email">
-      <i class="fa fa-envelope"></i>
-    </p>
-    
-    <p class="control has-icon">
-      <input class="input is-large" type="password" placeholder="Password" ng-model="login.loginInfo.password">
-      <i class="fa fa-lock"></i>
-    </p>
-
-    <p class="control">
-      <button class="button is-success is-large" ng-click="login.loginAdmin();">
-        Login
-      </button>
-    </p>
-
   </div>
 </div>

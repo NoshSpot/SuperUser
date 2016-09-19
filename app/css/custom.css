@@ -1,3 +1,83 @@
-.loginBox{
-  margin-top: 15%;
+/****************************************************
+				Body Default
+****************************************************/
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+
+ main {
+   flex: 1 0 auto;
+ }
+
+/****************************************************
+				NavBar Default
+****************************************************/
+.nav{
+	background-color: rgba(90, 111, 93, .8);
+}
+
+#navName {
+	color: #fff;
+	font-size: 2.6em;
+	font-family: lobster;
+}
+
+.nav a {
+	font-size: 1.4em;
+	color: #fff;
+}
+
+
+/****************************************************
+				Footer Default
+****************************************************/
+.footer {
+	height: 50px;
+	background-color: rgba(255, 255, 255, .6);
+	z-index: 1;
+}
+
+.footer p {
+	color: #000;
+}
+
+/****************************************************
+				Input Field Default
+****************************************************/
+.input:active, .textarea:active, .input:focus, .textarea:focus, .input.is-active, .is-active.textarea {
+ 	border-color: #6a3b3b;
+ 	outline: none;
+}
+
+
+/****************************************************
+					Login Page
+****************************************************/
+.loginBox {
+  margin-top: 19%;
+  background-color: rgba(255, 255, 255, .7);
+  size: relative;
+  box-shadow: 0px 5px 10px #5a6f5d;
+}
+
+#loginBackground {
+	background-image: url('../img/restaurant.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+.login-button {
+	background-color: #5a6f5d;
+	color: #fff;
+}
+
+.login-button-icon {
+	padding-left: 3px;
 }

@@ -15,17 +15,18 @@
     "test",
     "tests"
   ],
-  "overrides" : {
-      "bulma": {
-        "main": [
-            "css/bulma.css"
-        ]
-      }
+  "overrides": {
+    "bulma": {
+      "main": [
+        "css/bulma.css"
+      ]
+    }
   },
   "dependencies": {
     "angular": "^1.5.8",
     "angular-toastr": "^2.0.0",
     "angular-ui-router": "^0.3.1",
-    "bulma": "^0.1.2"
+    "bulma": "^0.1.2",
+    "font-awesome": "^4.6.3"
   }
 }
