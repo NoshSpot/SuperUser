@@ -61,7 +61,7 @@
                                             >{{category.categoryTitle}}</option> -->
                                 </select>
                             </span>
-                            <div ng-show="restaurantDetail.restaurants.categoryId === null">
+                            <div ng-show="restaurantDetail.restaurants.categoryId == null">
                                 <input class="input" type="text" ng-model="restaurantDetail.newCategory.categoryTitle" placeholder="Category name...">
                                 <button ng-click="restaurantDetail.addCategory()">Add Category</button>
                             </div>
