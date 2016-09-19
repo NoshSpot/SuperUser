@@ -16,12 +16,17 @@
         activate();
         /////////////////////
 
-        function activate() {
-            RestaurantFactory.getById($stateParams.restaurantId).then(function(data) {
-                vm.details = data;
-            });
-        }
 
+        function activate() {
+             if ($stateParams.restaurantId) {
+                RestaurantFactory.getById($stateParams.restaurantId).then(function(data) {
+                    vm.details = data;
+                });
+             } else {
+                vm.details = {};
+            }
+        }
+        
         function getTotal(order) {
             var sum = 0;
 

@@ -20,9 +20,13 @@
         ////////////////
 
         function getMenu() {
-            RestaurantFactory.getById($stateParams.restaurantId).then(function(response) {
-                vm.menu = response.menuGroups;
-            });
+            if ($stateParams.restaurantId) {
+                RestaurantFactory.getById($stateParams.restaurantId).then(function(response) {
+                    vm.menu = response.menuGroups;
+                });
+            } else {
+                vm.menu = {};
+            }
         }
 
         function addMenuItem(newMenuItem, menuGroupId) {
