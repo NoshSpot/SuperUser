@@ -43,8 +43,9 @@
 
         function getCustomerById(id) {
             CustomerFactory.getById(id).then (
-                function(response) {
-                    vm.customer = response.data;
+                function(data) {
+                    vm.customer = data;
+                    console.log(data);
                 },
                 function(error) {
                     toastr.error(error.status, error.statusText);
