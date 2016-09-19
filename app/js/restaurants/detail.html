@@ -45,6 +45,21 @@
                         </p>
                     </div>
                 </div>
+                <div class="columns">
+                    <div class="column is-half">
+                        <label class="label">Category:</label>
+                        <p class="control">
+                            <span class="select">
+                            <select type="text" 
+                                    ng-model="restaurantDetail.restaurants.categoryId">
+                                <option value="new">Add new category</option>
+                                <option ng-repeat="category in restaurantDetail.categories"
+                                        ng-value="category.categoryId">{{category.categoryTitle}}</option>
+                            </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
                 <article class="message">
                     <div class="message-header">
                         <p>Description:</p>
