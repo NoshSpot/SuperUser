@@ -1,7 +1,8 @@
-<h1>MENU</h1>
+<input type="text" ng-model="restaurantDetailMenu.newGroup.menuGroupTitle">
+<button ng-click="restaurantDetailMenu.addMenuGroup()">Add Menu Group</button>
 <div ng-repeat="menuGroup in restaurantDetailMenu.menu">
-    <h1>{{menuGroup.menuGroupTitle}}</h1>
-    <table>
+    <h1 class="header">{{menuGroup.menuGroupTitle}}</h1>
+    <table class="table">
         <thead>
             <tr>
                 <td>Name</td>

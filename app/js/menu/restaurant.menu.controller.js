@@ -14,6 +14,7 @@
         vm.menu = [];
 
         vm.addMenuItem = addMenuItem;
+        vm.addMenuGroup = addMenuGroup;
         vm.deleteMenuItem = deleteMenuItem;
         ////////////////
         getMenu();
@@ -36,6 +37,13 @@
 
         function deleteMenuItem(menuItem) {
             MenuItemFactory.remove(menuItem.menuItemId).then(function(response) {
+                getMenu();
+            });
+        }
+
+        function addMenuGroup() {
+            vm.newGroup.restaurantId = $stateParams.restaurantId;
+            MenuGroupFactory.add(vm.newGroup).then(function(response) {
                 getMenu();
             });
         }
