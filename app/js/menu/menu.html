@@ -1,7 +1,8 @@
-<h1>MENU</h1>
+<input type="text" ng-model="restaurantDetailMenu.newGroup.menuGroupTitle">
+<button ng-click="restaurantDetailMenu.addMenuGroup()">Add Menu Group</button>
 <div ng-repeat="menuGroup in restaurantDetailMenu.menu">
-    <h1>{{menuGroup.menuGroupTitle}}</h1>
-    <table>
+    <h1 class="header">{{menuGroup.menuGroupTitle}}</h1>
+    <table class="table">
         <thead>
             <tr>
                 <td>Name</td>
@@ -19,11 +20,11 @@
                 </td>
             </tr>
             <tr>
-                <td><input type="text" ng-model="restaurantDetailMenu.newMenuItem.name"></td>
-                <td><input type="text" ng-model="restaurantDetailMenu.newMenuItem.description"></td>
-                <td><input type="text" ng-model="restaurantDetailMenu.newMenuItem.price"></td>
+                <td><input type="text" ng-model="menuGroup.newMenuItem.name"></td>
+                <td><input type="text" ng-model="menuGroup.newMenuItem.description"></td>
+                <td><input type="text" ng-model="menuGroup.newMenuItem.price"></td>
                 <td>
-                    <button ng-click="restaurantDetailMenu.addMenuItem(menuGroup.menuGroupId)">Add</button>
+                    <button ng-click="restaurantDetailMenu.addMenuItem(menuGroup.newMenuItem, menuGroup.menuGroupId)">Add</button>
                 </td>
             </tr>
         </tbody>
