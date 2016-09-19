@@ -14,6 +14,7 @@
         vm.save = save;
         vm.restaurants = {};
         vm.getRestaurantById = getRestaurantById;
+        vm.$state = $state;
 
         getRestaurantById();
 
