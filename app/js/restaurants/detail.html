@@ -71,9 +71,9 @@
             <div class="panel-heading">
                 <div class="tabs">
                     <ul>
-                        <li ng-class="{ 'is-active': restaurantDetail.$state.is('restaurants.detail.tabs.menu')}" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a>Menu:</a></li>
-                        <li ng-class="{ 'is-active': restaurantDetail.$state.is('restaurants.detail.tabs.orders')}" ui-sref="restaurants.detail.tabs.orders({restaurantId: restaurantDetail.restaurantId})"><a>Orders:</a></li>
-                        <li ng-class="{ 'is-active': restaurantDetail.$state.is('restaurants.detail.tabs.reviews')}" ui-sref="restaurants.detail.tabs.reviews({restaurantId: restaurantDetail.restaurantId})"><a>Reviews:</a></li>
+                        <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a>Menu:</a></li>
+                        <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.orders({restaurantId: restaurantDetail.restaurantId})"><a>Orders:</a></li>
+                        <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.reviews({restaurantId: restaurantDetail.restaurantId})"><a>Reviews:</a></li>
                     </ul>
                 </div>
             </div>
