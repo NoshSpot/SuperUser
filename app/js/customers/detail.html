@@ -85,11 +85,24 @@
 				<!-- Reviews -->
 				<div ng-show="customerDetail.reviewMode">
 					<ul>
-						<li ng-repeat="review in customerDetail.customer.review">
-							<label>Rating:</label>
-							<p>{{review.rating}}</p>
-							<label>Review:</label>
-							<p>{{review.description}}</p>
+						<li ng-repeat="review in customerDetail.customer.reviews">
+							<div class="columns">
+								<div class="column">
+									<strong>{{review.restaurant.name}}</strong>
+								</div>
+							</div>
+							<div class="columns">
+								<div class="column">
+									<strong>Rating:</strong>
+									<p>{{review.rating}}</p>
+								</div>
+							</div>
+							<div class="columns">
+								<div class="column">
+								<strong>Review:</strong>
+								<p>{{review.reviewDescription}}</p>
+								</div>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -100,15 +113,17 @@
 						<thead>
 							<tr>
 								<th>Time</th>
-								<th>Order</th>
-								<th>Price</th>
+								<th>Restaurant</th>
+								<th>Items Ordered</th>
+								<th>Total</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="order in customerDetail.customer.order">
+							<tr ng-repeat="order in customerDetail.customer.orders">
 								<td>{{order.timeStamp}}</td>
-								<td>{{order.orderItem.menuItem.name}}</td>
-								<td>{{order.orderItem.menuItem.price}}</td>
+								<td>{{order.restaurant.name}}</td>
+								<td>{{order.orderItems.length}}</td>
+								<td>{{customerDetail.sumOrder(order)}}</td>
 							</tr>
 						</tbody>
 					</table>
