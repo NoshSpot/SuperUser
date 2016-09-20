@@ -13,13 +13,14 @@
         vm.title = 'CustomerDetailController';
 
         // variables
-        vm.customerId = 1; //$stateParams.customerId;
+        vm.customerId = $stateParams.customerId;
         vm.customer;
         vm.reviewMode = true;
 
         // functions
         vm.deleteCustomer = deleteCustomer;
         vm.getCustomerById = getCustomerById;
+        vm.sumOrder = sumOrder;
 
         activate();
 
@@ -51,6 +52,17 @@
                     toastr.error(error.status, error.statusText);
                 }
             );
+        }
+
+        function sumOrder(order) {
+            var sum = 0;
+            var orderItemLength = order.orderItems.length;
+            
+            for (var i = 0; i < orderItemLength; i++) {
+                sum += order.orderItems[i].menuItem.price;
+            }
+
+            return sum;
         }
     }
 })();
