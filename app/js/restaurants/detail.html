@@ -1,49 +1,59 @@
-<div>
+<div id="restaurantDetailBody">
     <div class="container">
-        <div class="panel">
-            <p class="panel-heading">Restaurant Details</p>
-            <div class="panel-body">
-                <div class="columns">
-                    <div class="column is-half">
-                        <label class="label">Restaurant Name:</label>
-                        <p class="control">
-                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.name">
-                        </p>
-                    </div>
-                    <div class="column">
-                        <label class="label">Address:</label>
-                        <p class="control">
-                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.address">
-                        </p>
-                    </div>
+        <div class="box">
+            <div class="panel restaurant-detail-panel">
+                <div class="panel-heading">
+                   <p>Restaurant Details: </p> 
                 </div>
-                <div class="columns">
-                    <div class="column is-half">
-                        <label class="label">Zip Code:</label>
-                        <p class="control">
-                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.zipCode">
-                        </p>
+                <div class="panel-body" id="restaurantPanelBody">
+                    <div class="columns" id="restaurantDetailTopColumns">
+                        <div class="column is-half">
+                            <label class="label">Restaurant Name:</label>
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.name">
+                            </p>
+                        </div>
+                        <div class="column">
+                            <label class="label">Address:</label>
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.address">
+                            </p>
+                        </div>
                     </div>
-                    <div class="column">
-                        <label class="label">Telephone:</label>
-                        <p class="control">
-                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.telephone">
-                        </p>
+                    <div class="columns">
+                        <div class="column is-half">
+                            <label class="label">Zip Code:</label>
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.zipCode">
+                            </p>
+                        </div>
+                        <div class="column">
+                            <label class="label">Telephone:</label>
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.telephone">
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-half">
-                        <label class="label">Email Address:</label>
-                        <p class="control">
-                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.email">
-                        </p>
+                    <div class="columns">
+                        <div class="column is-half">
+                            <label class="label">Email Address:</label>
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.email">
+                            </p>
+                        </div>
+                        <div class="column">
+                            <label class="label">Website Url:</label>
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.webSite">
+                            </p>
+                        </div>
                     </div>
-                    <div class="column">
-                        <label class="label">Website Url:</label>
-                        <p class="control">
-                            <input class="input" type="text" placeholder="Text input" ng-model="restaurantDetail.restaurants.webSite">
-                        </p>
+                    <div>
+                        <label class="label">Description:</label>
+                            <textarea id="restaurantDetailDescription" type="form" ng-model="restaurantDetail.restaurants.description"></textarea>
                     </div>
+                    <div id="restaurantDetailSaveBtn">
+                        <button ng-click="restaurantDetail.save(restaurants, restaurantId)" class="button is-medium restaurant-save-details">Save <i class="icons fa fa-check"></i></button>
                 </div>
                 <div class="columns">
                     <div class="column is-half">
@@ -65,27 +75,8 @@
                                 <input class="input" type="text" ng-model="restaurantDetail.newCategory.categoryTitle" placeholder="Category name...">
                                 <button ng-click="restaurantDetail.addCategory()">Add Category</button>
                             </div>
-                            
                         </p>
                     </div>
-                </div>
-                <article class="message">
-                    <div class="message-header">
-                        <p>Description:</p>
-                    </div>
-                    <div class="message-body">
-                        <textarea ng-model="restaurantDetail.restaurants.description"
-                                  class="textarea">
-                        </textarea>
-                    </div>
-                </article>
-                <div>
-                    <a ng-click="restaurantDetail.save(restaurants, restaurantId)" class="button is-primary">
-                        <span class="icon">
-								        <i class="fa fa-check"></i>
-								      </span>
-                        <span>Submit</span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -93,19 +84,21 @@
     <!-- Use CSS to pad, rather than <br>  -->
     <br>
     <div class="container" ng-show="restaurantDetail.restaurants.restaurantId">
-        <div class="panel">
-            <div class="panel-heading">
-                <div class="tabs">
-                    <ul>
-                        <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a>Menu:</a></li>
-                        <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.orders({restaurantId: restaurantDetail.restaurantId})"><a>Orders:</a></li>
-                        <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.reviews({restaurantId: restaurantDetail.restaurantId})"><a>Reviews:</a></li>
-                    </ul>
+        <div class="box">
+            <div class="panel restaurant-detail-panel2">
+                <div class="panel-heading">
+                    <div class="tabs">
+                        <ul>
+                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a>Menu:</a></li>
+                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.orders({restaurantId: restaurantDetail.restaurantId})"><a>Orders:</a></li>
+                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.reviews({restaurantId: restaurantDetail.restaurantId})"><a>Reviews:</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="panel-body">
-                <div ui-view>
-                    THIS IS WHERE THE TAB INFORMATION WILL BE DISPLAYED.
+                <div class="panel-body">
+                    <div ui-view>
+                        THIS IS WHERE THE TAB INFORMATION WILL BE DISPLAYED.
+                    </div>
                 </div>
             </div>
         </div>
