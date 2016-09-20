@@ -58,8 +58,8 @@
                 <div class="columns">
                     <div class="column is-half">
                         <label class="label">Category:</label>
-                        <p class="control">
-                            <span class="select">
+                        <div class="control">
+                            <div class="select is-fullwidth">
                                 <select type="text" 
                                         ng-model="restaurantDetail.restaurants.categoryId"
                                         ng-options="category.categoryId as category.categoryTitle for category in restaurantDetail.categories"
@@ -70,12 +70,12 @@
                                             ng-value="{{category.categoryId}}"
                                             >{{category.categoryTitle}}</option> -->
                                 </select>
-                            </span>
+                            </div>
                             <div ng-show="restaurantDetail.restaurants.categoryId == null">
                                 <input class="input" type="text" ng-model="restaurantDetail.newCategory.categoryTitle" placeholder="Category name...">
                                 <button ng-click="restaurantDetail.addCategory()">Add Category</button>
                             </div>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
