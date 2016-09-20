@@ -60,11 +60,11 @@ body {
 /****************************************************
 					Login Page
 ****************************************************/
-.loginBox {
-  margin-top: 280px;
-  background-color: rgba(255, 255, 255, .7);
-  size: relative;
-  box-shadow: 0px 5px 10px #5a6f5d;
+.loginBox {	
+	margin-top: 15%;
+	background-color: rgba(255, 255, 255, .7);
+	/*size: relative;*/
+	box-shadow: 0px 5px 10px #5a6f5d;
 }
 
 #loginBackground {
@@ -123,6 +123,7 @@ body {
 	border-bottom: 1px solid #294949;
 }
 
+.customer-detail-panel2,
 .customer-detail-panel,
 .restaurant-detail-panel2,
 .restaurant-detail-panel,
@@ -201,3 +202,11 @@ body {
 /****************************************************
 			Customer Detail Page
 ****************************************************/
+
+.tab-links {
+	color: black;
+}
+
+.tab-links .is-active{
+	color: red;
+}
