@@ -117,18 +117,12 @@
         					</tr>
         				</thead>
         				<tbody>
-                            <tr>
-                                <td>12/3/2001 11:23:12</td>
-                                <td>Chipotle</td>
-                                <td>5</td>
-                                <td>$30.78</td>
-                            </tr>
-        					<!-- <tr ng-repeat="order in customerDetail.customer.orders">
-        						<td>{{order.timeStamp}}</td>
+        					<tr ng-repeat="order in customerDetail.customer.orders">
+        						<td>{{order.timeStamp | date: 'short'}}</td>
         						<td>{{order.restaurant.name}}</td>
-        						<td>{{order.orderItems.length}}</td>
-        						<td>{{customerDetail.sumOrder(order)}}</td>
-        					</tr> -->
+        						<td>{{order.numItemsOrdered}}</td>
+                                <td>{{order.orderTotal | currency}}</td>
+        					</tr>
         				</tbody>
         			</table>
         		</div>
