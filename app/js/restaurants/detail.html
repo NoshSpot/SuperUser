@@ -55,6 +55,7 @@
                     <div id="restaurantDetailSaveBtn">
                         <button ng-click="restaurantDetail.save(restaurants, restaurantId)" class="button is-medium restaurant-save-details">Save <i class="icons fa fa-check"></i></button>
                 </div>
+
                 <!-- NEEDS TO BE ADDRESSED AS A GROUP -->
                 <!-- <div class="columns">
                     <div class="column is-half">
@@ -87,16 +88,16 @@
     <div class="container" ng-show="restaurantDetail.restaurants.restaurantId">
         <div class="box">
             <div class="restaurant-detail-panel2">
-                <div>
+                <div>    
                     <div class="tabs is-boxed">
                         <ul>
-                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a>Menu:</a></li>
-                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.orders({restaurantId: restaurantDetail.restaurantId})"><a>Orders:</a></li>
-                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.reviews({restaurantId: restaurantDetail.restaurantId})"><a>Reviews:</a></li>
+                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a class="tab-links">Menu:</a></li>
+                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.orders({restaurantId: restaurantDetail.restaurantId})"><a class="tab-links">Orders:</a></li>
+                            <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.reviews({restaurantId: restaurantDetail.restaurantId})"><a class="tab-links">Reviews:</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="panel-block">
                     <div ui-view>
 
                     </div>
