@@ -1,7 +1,11 @@
+
+
 /****************************************************
 				Body Default
 ****************************************************/
+
 body {
+	font-family: Raleway;
    display: flex;
    min-height: 100vh;
    flex-direction: column;
@@ -18,6 +22,7 @@ body {
 .nav{
 	background-color: rgba(90, 111, 93, .8);
 	margin-bottom: 15px;
+	font-family: Raleway;
 }
 
 #navName {
@@ -36,6 +41,7 @@ body {
 				Footer Default
 ****************************************************/
 .footer {
+	font-family: Raleway;
 	height: 40px;
 	width: 100%;
 	background-color: rgba(255, 255, 255, .6);
@@ -69,6 +75,7 @@ input {
 					Login Page
 ****************************************************/
 .loginBox {	
+	font-family: Raleway;
 	margin-top: 15%;
 	background-color: rgba(255, 255, 255, .7);
 	/*size: relative;*/
@@ -131,6 +138,7 @@ input {
 	border-bottom: 1px solid #294949;
 }
 
+.restaurant-menu-panel,
 .customer-detail-panel2,
 .customer-detail-panel,
 .restaurant-detail-panel2,
@@ -141,7 +149,7 @@ input {
 }
 
 .box {
-	box-shadow: 0px 8px 13px #ccc;
+	box-shadow: 0px 12px 13px #ccc;
 	margin-top: 4%;
 }
 
