@@ -78,6 +78,31 @@
                     <div id="restaurantDetailSaveBtn">
                         <button ng-click="restaurantDetail.save(restaurants, restaurantId)" class="button is-medium restaurant-save-details">Save <i class="icons fa fa-check"></i></button>
                 </div>
+
+                <!-- NEEDS TO BE ADDRESSED AS A GROUP -->
+                <!-- <div class="columns">
+                    <div class="column is-half">
+                        <label class="label">Category:</label>
+                        <p class="control">
+                            <span class="select">
+                                <select type="text" 
+                                        ng-model="restaurantDetail.restaurants.categoryId"
+                                        ng-options="category.categoryId as category.categoryTitle for category in restaurantDetail.categories"
+                                        >
+                                        <option value="">Add New Category...</option>
+                                        <option value="new">Add new category</option>
+                                        <option ng-repeat="category in restaurantDetail.categories"
+                                            ng-value="{{category.categoryId}}"
+                                            >{{category.categoryTitle}}</option>
+                                </select>
+                            </span>
+                            <div ng-show="restaurantDetail.restaurants.categoryId == null">
+                                <input class="input" type="text" ng-model="restaurantDetail.newCategory.categoryTitle" placeholder="Category name...">
+                                <button ng-click="restaurantDetail.addCategory()">Add Category</button>
+                            </div>
+                        </p>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -86,7 +111,6 @@
     <div class="container" ng-show="restaurantDetail.restaurants.restaurantId">
         <div class="box">
             <div class="restaurant-detail-panel2">
-                <div class="">
                     <div class="tabs is-boxed">
                         <ul>
                             <li ui-sref-active="is-active" ui-sref="restaurants.detail.tabs.menu({restaurantId: restaurantDetail.restaurantId})"><a class="tab-links">Menu:</a></li>
@@ -97,7 +121,7 @@
                 </div>
                 <div class="panel-body">
                     <div ui-view>
-                        THIS IS WHERE THE TAB INFORMATION WILL BE DISPLAYED.
+
                     </div>
                 </div>
             </div>
