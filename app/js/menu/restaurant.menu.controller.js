@@ -48,7 +48,9 @@
         function addMenuGroup() {
             vm.newGroup.restaurantId = $stateParams.restaurantId;
             MenuGroupFactory.add(vm.newGroup).then(function(response) {
+                toastr.success("Successfully added MenuGroup");
                 getMenu();
+                vm.newGroup = {};
             });
         }
     }
