@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router', 'toastr'])
+        .module('app', ['ui.router', 'toastr', 'uiRouterStyles'])
         .value('apiUrl', 'http://localhost:61815/api' )
         .config(appConfig);
 
@@ -17,7 +17,11 @@
     	.state('login', {
     		url: '/login',
     		controller: 'LoginController as login',
-    		templateUrl: 'js/login/login.html'
+    		templateUrl: 'js/login/login.html',
+            data: {
+               css: 'css/login.css'
+            }
+
     	})
 /////// RESTAURANT STATES ////////////////////////////////////////////
     	.state('restaurants', {
@@ -28,12 +32,18 @@
     		.state('restaurants.list', {
     			url: '/list',
     			controller: 'RestaurantListController as restaurantList',
-    			templateUrl: 'js/restaurants/list.html'
+    			templateUrl: 'js/restaurants/list.html',
+                data: {
+                    css: 'css/custom.css'
+            }
     		})
     		.state('restaurants.detail', {
     			url: '/detail?restaurantId',
     			controller: 'RestaurantDetailController as restaurantDetail',
-    			templateUrl: 'js/restaurants/detail.html'
+    			templateUrl: 'js/restaurants/detail.html',
+                data: {
+                    css: 'css/custom.css'
+            }
     		})
     			.state('restaurants.detail.tabs', {
     				url: '/tabs',
@@ -43,17 +53,26 @@
     				.state('restaurants.detail.tabs.menu', {
     					url: '/menu',
     					controller: 'RestaurantDetailMenuController as restaurantDetailMenu',
-    					templateUrl: 'js/menu/menu.html'
+    					templateUrl: 'js/menu/menu.html',
+                        data: {
+                            css: 'css/custom.css'
+                    }
     				})
     				.state('restaurants.detail.tabs.orders', {
     					url: '/orders',
     					controller: 'RestaurantDetailOrdersController as restaurantDetailOrders',
-    					templateUrl: 'js/orders/orders.html'
+    					templateUrl: 'js/orders/orders.html',
+                        data: {
+                            css: 'css/custom.css'
+                    }
     				})
     				.state('restaurants.detail.tabs.reviews', {
     					url: '/reviews',
     					controller: 'RestaurantDetailReviewsController as restaurantDetailReviews',
-    					templateUrl: 'js/reviews/reviews.html'
+    					templateUrl: 'js/reviews/reviews.html',
+                        data: {
+                            css: 'css/custom.css'
+                    }
     				})
 /////// CUSTOMERS STATES ////////////////////////////////////////////
 		.state('customers', {
@@ -64,12 +83,18 @@
 			.state('customers.list', {
 				url: '/list',
 				controller: 'CustomersListController as customersList',
-				templateUrl: 'js/customers/list.html'
+				templateUrl: 'js/customers/list.html',
+                data: {
+                    css: 'css/custom.css'
+            }
 			})
 			.state('customers.detail', {
 				url: '/detail?customerId',
 				controller: 'CustomerDetailController as customerDetail',
-				templateUrl: 'js/customers/detail.html'
+				templateUrl: 'js/customers/detail.html',
+                data: {
+                    css: 'css/custom.css'
+            }
 			});
     }   
 })();

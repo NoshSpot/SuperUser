@@ -9,6 +9,7 @@
 
     /* @ngInject */
     function CustomerDetailController($stateParams, CustomerFactory, ReviewFactory, toastr) {
+
         var vm = this;
         vm.title = 'CustomerDetailController';
 
@@ -21,7 +22,7 @@
         vm.deleteCustomer = deleteCustomer;
         vm.getCustomerById = getCustomerById;
         vm.sumOrder = sumOrder;
-        // vm.removeReview = removeReview;
+        vm.removeReview = removeReview;
 
         activate();
 
@@ -66,16 +67,17 @@
             return sum;
         }
 
-        // function removeReview(review) {
-        //     if (confirm("Are you sure you want to remove this review?")) {
-        //         ReviewFactory.remove(review.reviewId).then (
-        //             function(data) {
-        //                 var index = vm.customer.reviews.indexOf(review);
-        //                 vm.customer.reviews.splice(index, 1);
-        //                 console.log("Removed review successfully");
-        //             }
-        //         );
-        //     }
-        // }
+        function removeReview(review) {
+            if (confirm("Are you sure you want to remove this review?")) {
+                ReviewFactory.remove(review.reviewId).then (
+                    function(data) {
+                        var index = vm.customer.reviews.indexOf(review);
+                        vm.customer.reviews.splice(index, 1);
+                        console.log("Removed review successfully");
+                    }
+                );
+            }
+        }
+
     }
 })();
