@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app = "app">
+<html lang="en" ng-app = "app" ui-router-styles>
 <head>
   <meta charset="UTF-8">
   <title>NoshSpot | SuperUser</title>
@@ -14,15 +14,14 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <!-- inject:css -->
   <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/login.css">
   <!-- endinject -->
 </head>
 
 <body>
     <nav class="nav">
         <div class="nav-left">
-            <a id="navName" class="nav-item is-brand" href="#">
-                    NoshSpot
-                </a>
+            <a id="navName" class="nav-item is-brand" href="#">NoshSpot</a>
         </div>
         <span class="nav-toggle">
             <span></span>
@@ -55,9 +54,14 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="js/app.module.js"></script>
+    <script src="js/customers/customer.detail.controller.js"></script>
+    <script src="js/customers/customerList.Controller.js"></script>
+    <script src="js/login/login.controller.js"></script>
+    <script src="js/menu/restaurant.menu.controller.js"></script>
     <script src="js/core/category.factory.js"></script>
     <script src="js/core/crud.factory.js"></script>
     <script src="js/core/customer.factory.js"></script>
@@ -72,6 +76,7 @@
     <script src="js/customers/customer.detail.controller.js"></script>
     <script src="js/customers/customerList.Controller.js"></script>
     <script src="js/orders/restaurant.orders.controller.js"></script>
+    <script src="js/reviews/restaurant.reviews.controller.js"></script>
     <script src="js/restaurants/list.controller.js"></script>
     <script src="js/restaurants/restaurant.detail.controller.js"></script>
     <script src="js/menu/restaurant.menu.controller.js"></script>
