@@ -21,7 +21,9 @@
           if (vm.loginInfo.password === "butts"){
             //route to restaurants.list
             $state.go('restaurants.list');
-          }else{
+          }
+          else
+          {
             alert("You didn't enter the correct password.");
           }
         }
