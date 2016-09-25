@@ -5,10 +5,10 @@
         .module('app')
         .controller('RestaurantDetailReviewsController', RestaurantDetailReviewsController);
 
-    RestaurantDetailReviewsController.$inject = ['RestaurantFactory', '$stateParams'];
+    RestaurantDetailReviewsController.$inject = ['RestaurantFactory', '$stateParams','ReviewFactory'];
 
     /* @ngInject */
-    function RestaurantDetailReviewsController(RestaurantFactory, $stateParams) {
+    function RestaurantDetailReviewsController(RestaurantFactory, $stateParams, ReviewFactory) {
         var vm = this;
         vm.title = 'RestaurantDetailReviewsController';
         // vm.reviews = reviews;

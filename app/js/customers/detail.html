@@ -82,27 +82,16 @@
     		<!-- Reviews -->
             <div class="panel-body">
         		<div ng-show="customerDetail.reviewMode">
-        			<ul>
-        				<li ng-repeat="review in customerDetail.customer.reviews">
-        					<div class="columns">
-        						<div class="column">
-        							<strong>{{review.restaurant.name}}</strong>
-        						</div>
-        					</div>
-        					<div class="columns">
-        						<div class="column">
-        							<strong>Rating:</strong>
-        							<p>{{review.rating}}</p>
-        						</div>
-        					</div>
-        					<div class="columns">
-        						<div class="column">
-        						<strong>Review:</strong>
-        						<p>{{review.reviewDescription}}</p>
-        						</div>
-        					</div>
-        				</li>
-        			</ul>
+                    <table class="table is-striped">
+                        <tbody>
+                            <tr ng-repeat="review in customerDetail.customer.reviews">
+                                <td><strong>{{review.restaurant.name}}</strong></td>
+                                <td>{{review.rating}}</td>
+                                <td>{{review.reviewDescription}}</td>
+                                <td><button class="button is-danger" ng-click="customerDetail.removeReview(review)">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
         		</div>
 
         		<!-- Orders History -->

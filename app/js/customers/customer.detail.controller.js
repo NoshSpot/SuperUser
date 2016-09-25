@@ -5,10 +5,10 @@
         .module('app')
         .controller('CustomerDetailController', CustomerDetailController);
 
-    CustomerDetailController.$inject = ['$stateParams', 'CustomerFactory', 'toastr'];
+    CustomerDetailController.$inject = ['$stateParams', 'CustomerFactory', 'toastr','ReviewFactory'];
 
     /* @ngInject */
-    function CustomerDetailController($stateParams, CustomerFactory, toastr) {
+    function CustomerDetailController($stateParams, CustomerFactory, toastr, ReviewFactory) {
         var vm = this;
         vm.title = 'CustomerDetailController';
 
@@ -63,6 +63,18 @@
             }
 
             return sum;
+        }
+        function removeReview(review) {
+            if (confirm("Are you sure you want to remove this Review?")) {
+                ReviewFactory.remove(review.reviewId).then(
+                    function() {
+                        // var index = vm.reviews.indexOf(review);
+                        // vm.reviews.splice(index, 1);
+                        getCustomerById();
+                        console.log("removed the review");
+                    }
+                );
+            }
         }
     }
 })();
