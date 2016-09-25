@@ -25,7 +25,7 @@
         vm.categories;
 
 
-        activate()
+        activate();
 
         ////////////////
 
@@ -38,7 +38,7 @@
          function deleteRestaurant(id) {
             RestaurantFactory.remove(id).then (
                 function(response) {
-                    console.log(response)
+                    console.log(response);
                     toastr.success("Restaurant successfully deleted.");
                     vm.restaurants = {};
                 }
