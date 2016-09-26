@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     <tr>
-        <tr ng-repeat="order in restaurantDetailOrders.details.orders">
+        <tr ng-repeat="order in restaurantDetailOrders.details.orders" ng-hide="order.numItemsOrdered == 0">
             <td>
                 {{order.customer.firstName}} {{order.customer.lastName}}
             </td>
