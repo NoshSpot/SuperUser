@@ -216,5 +216,9 @@ input {
 a.nav-item.nav-link {
 	visibility: visible;
 	display: block;
+	color: #fff;
+	font-size: 1.7em;
+	padding-top: 15px;
+	
 }
 
