@@ -67,13 +67,15 @@
             });
         }
 
-        function addMenuGroup() {
-            vm.newGroup.restaurantId = $stateParams.restaurantId;
-            MenuGroupFactory.add(vm.newGroup).then(function(response) {
-                toastr.success("Successfully added MenuGroup");
-                getMenu();
-                vm.newGroup = {};
-            });
+        function addMenuGroup(newMenuGroup, restaurantId) {
+            vm.newMenuGroup.restaurantId = $stateParams.restaurantId;
+                 MenuGroupFactory.add(vm.newMenuGroup).then(
+                    function(response) {
+                        toastr.success("Successfully added MenuGroup");
+                        getMenu();
+                        vm.newMenuGroup = {};
+                }
+            );
         }
     }
 })();
