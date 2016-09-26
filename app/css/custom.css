@@ -1,5 +1,3 @@
-
-
 /****************************************************
 				Body Default
 ****************************************************/
@@ -168,6 +166,10 @@ input {
 	width: 100%;
 }
 
+#delete-restaurant {
+	margin-bottom: 10px;
+}
+
 #restaurantPanelBody{
 	width: 98%;
 	margin-left: 1%;
@@ -219,6 +221,9 @@ a.nav-item.nav-link {
 	color: #fff;
 	font-size: 1.7em;
 	padding-top: 15px;
-	
+}
+
+.delete-menu-group-btn {
+	float: right;
 }
 
