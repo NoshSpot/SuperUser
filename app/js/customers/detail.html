@@ -83,6 +83,14 @@
             <div class="panel-body">
         		<div ng-show="customerDetail.reviewMode">
                     <table class="table is-striped">
+                        <thead>
+                            <tr>
+                                <th>Restaurant</th>
+                                <th>Rating</th>
+                                <th>Review</th>
+                                <th width="1%"></th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr ng-repeat="review in customerDetail.customer.reviews">
                                 <td><strong>{{review.restaurant.name}}</strong></td>
