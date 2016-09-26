@@ -17,6 +17,7 @@
         vm.getCategories = getCategories;
         vm.getRestaurantById = getRestaurantById;
         vm.addCategory = addCategory;
+        vm.deleteRestaurant = deleteRestaurant;
 
         //variable
         vm.restaurants = {};
@@ -24,13 +25,24 @@
         vm.categories;
 
 
-        activate()
+        activate();
 
         ////////////////
 
         function activate() {
             getRestaurantById();
             getCategories();
+        }
+
+
+         function deleteRestaurant(id) {
+            RestaurantFactory.remove(id).then (
+                function(response) {
+                    console.log(response);
+                    toastr.success("Restaurant successfully deleted.");
+                    vm.restaurants = {};
+                }
+            );
         }
 
         function getCategories() {

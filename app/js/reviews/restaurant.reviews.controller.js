@@ -5,10 +5,10 @@
         .module('app')
         .controller('RestaurantDetailReviewsController', RestaurantDetailReviewsController);
 
-    RestaurantDetailReviewsController.$inject = ['ReviewFactory', '$stateParams'];
+    RestaurantDetailReviewsController.$inject = ['RestaurantFactory', '$stateParams','ReviewFactory'];
 
     /* @ngInject */
-    function RestaurantDetailReviewsController(ReviewFactory, $stateParams) {
+    function RestaurantDetailReviewsController(RestaurantFactory, $stateParams, ReviewFactory) {
         var vm = this;
         vm.title = 'RestaurantDetailReviewsController';
         // vm.reviews = reviews;
@@ -19,11 +19,9 @@
         ////////////////
 
         function activate() {
-            ReviewFactory.getAll().then(
-                function(data) {
-                    vm.reviews = data;
-                }
-            );
+            RestaurantFactory.getById($stateParams.restaurantId).then(function(data) {
+                vm.reviews = data.reviews;
+            });
         }
 
         function removeReview(review) {

@@ -8,33 +8,15 @@
     </thead>
     <tbody>
     <tr>
-  <!--       <tr ng-repeat="order in restaurantDetailOrders.details.orders"> -->
+        <tr ng-repeat="order in restaurantDetailOrders.details.orders" ng-hide="order.numItemsOrdered == 0">
             <td>
-                Michele Kempinsky
-               <!--  {{order.customer.firstName}} {{order.customer.lastName}} -->
+                {{order.customer.firstName}} {{order.customer.lastName}}
             </td>
             <td>
-            8
-               <!--  {{order.orderItems.length}} -->
+                {{order.numItemsOrdered}}
             </td>
             <td>
-            $20.83
-               <!--  {{ restaurantDetailOrders.getTotal(order) }} -->
-            </td>
-        </tr>
-          <tr>
-  <!--       <tr ng-repeat="order in restaurantDetailOrders.details.orders"> -->
-            <td>
-                Michele Kempinsky
-               <!--  {{order.customer.firstName}} {{order.customer.lastName}} -->
-            </td>
-            <td>
-            8
-               <!--  {{order.orderItems.length}} -->
-            </td>
-            <td>
-            $20.83
-               <!--  {{ restaurantDetailOrders.getTotal(order) }} -->
+                {{ order.totalPrice | currency }}
             </td>
         </tr>
 
