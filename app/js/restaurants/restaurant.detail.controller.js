@@ -48,7 +48,6 @@
         function getCategories() {
             CategoryFactory.getAll().then (
                 function(data) {
-                    // console.log(data);
                     vm.categories = data;
                 },
                 function(error) {
@@ -64,7 +63,7 @@
                 
                 RestaurantFactory.getById($stateParams.restaurantId).then(
                     function(restaurants) {
-                        console.log(restaurants)
+                        console.log(restaurants);
                         // With an exisiting Id, the vm.restaurants value will be equal to an existing restaurant.
                         vm.restaurants = restaurants;
                     }
@@ -86,7 +85,7 @@
         function save() {
             // If the page loads, and the existing restaurant is already paired with an Id, then continue with the request with that specified restaurant.
             if ($stateParams.restaurantId) {
-                vm.restaurants.category = null;
+                // vm.restaurants.category = null;
                 // Call the current restaurant information, to be updated.
                 RestaurantFactory.update(vm.restaurants, vm.restaurants.restaurantId).then(
                     function() {

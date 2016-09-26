@@ -52,10 +52,10 @@
                     <div class="columns">
                         <div class="column is-half">
                             <label for="" class="label">Category</label>
-                            <p class="control"><input type="text" class="input" ng-model="restaurantDetail.restaurants.category.categoryTitle"></p>
+                            <p class="control"><input type="text" class="input" value="{{restaurantDetail.restaurants.category.categoryTitle}}"></p>
                         </div>
 
-                        <div class="column is-half">
+                        <!-- <div class="column is-half">
                             <label class="label">Add New Category:</label>
                             <p class="control">
                                 <div ng-show="restaurantDetail.restaurants.categoryId == null">
@@ -63,7 +63,7 @@
                                     <button class="button" ng-click="restaurantDetail.addCategory()">Add Category</button>
                                 </div>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                     <div>
                         <label class="label">Description:</label>
@@ -75,32 +75,7 @@
                     <div id="delete-restaurant">
                         <button class="button is-danger" ng-click="restaurantDetail.deleteRestaurant(restaurantDetail.restaurants.restaurantId)">Delete
                         </button>
-                    </div>
-
-                <!-- NEEDS TO BE ADDRESSED AS A GROUP -->
-                <!-- <div class="columns">
-                    <div class="column is-half">
-                        <label class="label">Category:</label>
-                        <div class="control">
-                            <div class="select is-fullwidth">
-                                <select type="text" 
-                                        ng-model="restaurantDetail.restaurants.categoryId"
-                                        ng-options="category.categoryId as category.categoryTitle for category in restaurantDetail.categories"
-                                        >
-                                        <option value="">Add New Category...</option>
-                                        <option value="new">Add new category</option>
-                                        <option ng-repeat="category in restaurantDetail.categories"
-                                            ng-value="{{category.categoryId}}"
-                                            >{{category.categoryTitle}}</option>
-                                </select>
-                            </div>
-                            <div ng-show="restaurantDetail.restaurants.categoryId == null">
-                                <input class="input" type="text" ng-model="restaurantDetail.newCategory.categoryTitle" placeholder="Category name...">
-                                <button ng-click="restaurantDetail.addCategory()">Add Category</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                    </div> 
             </div>
         </div>
     </div>
