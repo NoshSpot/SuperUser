@@ -6,7 +6,7 @@
     "Ryan Dowdy <rdowdy21@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/NoshSpot/SuperUser",
+  "homepage": "https://github.com/mkempinsky/NoshSpot-SuperUser.git",
   "ignore": [
     "**/.*",
     "node_modules",
